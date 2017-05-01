@@ -28,6 +28,8 @@ function cc_wp_plugin_favourites( $atts ) {
 
 	if ( ! empty( $atts['user'] ) ) {
 
+		// Retrieve data using plugins_api().
+		// See https://code.tutsplus.com/tutorials/communicating-with-the-wordpressorg-plugin-api--wp-33069 for other args.
 	    $plugins_api = plugins_api( 'query_plugins', array( 'user' => $atts['user'], 'per_page' => '-1' ) );
 
 	    if ( is_wp_error( $plugins_api ) ) {
